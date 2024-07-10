@@ -15,15 +15,20 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-        title: 'Todo List',
+            template: './src/index.html',
+            title: 'Todo List',
         }),
     ],
     module: {
         rules: [
-        {
-            test: /\.css$/i,
-            use: ['style-loader', 'css-loader'],
-        },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ],
     },
     optimization: {
