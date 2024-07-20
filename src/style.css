@@ -42,10 +42,29 @@ body {
     & a {
         display: flex;
         align-items: center;
+        pointer-events: none;
     }
     & .icon {
         margin-right: 10px;
     }
+}
+
+.btn-add-task {
+    border: none;
+    background: none;
+    cursor: pointer;
+    & a {
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+    }
+    & .icon {
+        margin-right: 10px;
+    }
+}
+
+.btn-add-task:hover {
+    background-color:rgba(0, 0, 0, 0.1);
 }
 
 .SB-my-projects {
@@ -62,7 +81,115 @@ body {
     display: none;
 }
 
-.FP-mainbar {
+.FP-mainbar-container {
     width: 85%;
     height: 100vh;
+    padding: 20px;
 }
+
+.overlay-container {
+    display: none;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.6); 
+    justify-content: center; 
+    align-items: center; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.popup-box { 
+    background: #fff; 
+    padding: 24px; 
+    border-radius: 12px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); 
+    width: 320px;
+    height: auto; 
+    text-align: center; 
+    opacity: 1; 
+    transform: scale(0.8); 
+    animation: fadeInUp 0.5s ease-out forwards; 
+} 
+
+.form-container { 
+    display: flex; 
+    flex-direction: column; 
+} 
+
+.checkbox-container {
+    display: flex;
+    justify-content: end;
+}
+
+.todo-checkbox {
+    width: 23px;
+    height: 23px;
+}
+
+.todo-title { 
+    padding: 10px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 16px; 
+    text-align: left; 
+    display: block;
+    overflow: hidden;
+    min-height: 40px;
+    line-height: 20px;
+} 
+
+.todo-title[contenteditable]:empty::before {
+    content: "Title";
+    color: gray;
+}
+
+.todo-description {
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    height: auto;
+    text-align: left;
+    display: block;
+    overflow: hidden;
+    min-height: 40px;
+    line-height: 20px;
+}
+
+.todo-description[contenteditable]:empty::before {
+    content: "Description";
+    color: gray;
+}
+
+.todo-date-prio {
+    margin-bottom: 20px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-date {
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 14px; 
+}
+
+.todo-priority {
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    background-color: white;
+}
+
+/* Animation for popup */ 
+.overlay-container.show { 
+    display: flex;
+    opacity: 1; 
+}
+

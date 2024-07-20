@@ -16,13 +16,13 @@
                     <span>Add task</span>
                 </a>
             </button>
-            <button class="btn-inbox">
+            <button class="btn-inbox" id="inbox-page">
                 <a>
                     <span class="icon material-symbols-outlined">inbox</span>
                     <span>Inbox</span>
                 </a>
             </button>
-            <button class="btn-today">
+            <button class="btn-today" id="today-page">
                 <a>
                     <span class="icon material-symbols-outlined">today</span>
                     <span>Today</span>
@@ -37,9 +37,31 @@
         </div>
         
     </div>
-    <div class="FP-mainbar">
-</div>
-
+    <div class="FP-mainbar-container"><div id="FP-mainbar"></div></div>
+    <div id="popup-overlay" class="overlay-container">
+        <div class="popup-box">
+            <div class="checkbox-container"><input type="checkbox" class="todo-checkbox" name="todo-checkbox"/></div>
+            <h2>Add new todo list</h2>
+            <form class="form-container"> 
+                <span class="todo-title" role="textbox" contenteditable></span>
+                <span class="todo-description" role="textbox" contenteditable></span>
+                <div class="todo-date-prio">
+                    <input type="date" class="todo-date" name="todo-start" value="Due dates"/>
+                    <select name="todo-priority" class="todo-priority">
+                        <option selected disabled>Priority:</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="overlay-buttons">
+                    <button class="btn-close-popup">Close</button> 
+                    <button class="btn-submit" type="submit"> Submit </button> 
+                </div>
+            </form> 
+        </div>
+    </div>
     <script src="./index.bundle.js"></script>
 </body>
 </html>
